@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: provider-app
+
+server:
+  port: 10000
+eureka:
+  client:
+    service-url:
+      # Register self
+      defaultZone: http://127.0.0.1:12345/eureka
+  instance:
+    instanceId: ${spring.cloud.client.ip-address}:${server.port}
